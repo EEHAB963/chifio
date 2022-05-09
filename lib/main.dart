@@ -2,6 +2,7 @@ import 'package:chefio/screen/start_screens/start_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'constans/colors.dart';
+import 'screen/start_screens/upload_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
                 fontSize: 17, fontWeight: FontWeight.w500, color: textColor2)),
         primarySwatch: Colors.blue,
       ),
-      home: const StartScreen(),
+      home: const UploadScreen(),
     );
   }
 }
