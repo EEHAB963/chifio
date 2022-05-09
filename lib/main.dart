@@ -1,5 +1,7 @@
+import 'package:chefio/provider/home_provider.dart';
 import 'package:chefio/screen/start_screens/start_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'constans/colors.dart';
 
@@ -13,21 +15,28 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        textTheme: const TextTheme(
-            headline1: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.w700,
-              color: textColor,
-            ),
-            headline2: TextStyle(
-                fontSize: 17, fontWeight: FontWeight.w500, color: textColor2)),
-        primarySwatch: Colors.blue,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => HomeProvider()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          textTheme: const TextTheme(
+              headline1: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.w700,
+                color: textColor,
+              ),
+              headline2: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.w500,
+                  color: textColor2)),
+          primarySwatch: Colors.blue,
+        ),
+        home: const StartScreen(),
       ),
-      home: const StartScreen(),
     );
   }
 }
