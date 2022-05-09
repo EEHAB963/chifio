@@ -1,77 +1,190 @@
+import 'package:chefio/constans/colors.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 
-class BottomNavBarWidget extends StatelessWidget {
-  BottomNavBarWidget({Key? key}) : super(key: key);
-  List<Widget> listBottomNavigationBarItem = [
-    Expanded(
-      child: Column(
-        children: const [
-          Icon(Icons.home),
-          SizedBox(
-            height: 5,
-          ),
-          Text('home'),
-        ],
-      ),
-    ),
-    Expanded(
-      child: Column(
-        children: const [
-          Icon(Icons.add),
-          SizedBox(
-            height: 5,
-          ),
-          Text('Udbont'),
-        ],
-      ),
-    ),
-    Expanded(
-      child: Column(
-        children:  [
-          Stack(
-            children: [
-              
-              Icon(Icons.document_scanner),
-            ],
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Text('scan'),
-        ],
-      ),
-    ),
-    Expanded(
-      child: Column(
-        children: const [
-          Icon(Icons.notifications),
-          SizedBox(
-            height: 5,
-          ),
-          Text('Notifcations'),
-        ],
-      ),
-    ),
-    Expanded(
-      child: Column(
-        children: const [
-          Icon(Icons.person),
-          SizedBox(
-            height: 5,
-          ),
-          Text('profil'),
-        ],
-      ),
-    )
-  ];
+class BottomNavBarWidget extends StatefulWidget {
+  BottomNavBarWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  State<BottomNavBarWidget> createState() => _BottomNavBarWidgetState();
+}
+
+class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
+  int index = 0;
+  int get ind => index;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 50,
-      child: Row(
-        children: listBottomNavigationBarItem,
-      ),
+    return Stack(
+      children: [
+        Container(
+          height: 60,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      index = 0;
+                    });
+                  },
+                  child: Container(
+                    width: 55,
+                    child: SizedBox(
+                      child: Column(
+                        children: [
+                          Icon(
+                            IconlyBold.home,
+                            size: 25,
+                            color: index == 0 ? butonColor : textColor2,
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            'Home',
+                            style: TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w500,
+                              color: index == 0 ? butonColor : textColor2,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                //................
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      index = 1;
+                    });
+                  },
+                  child: Container(
+                    width: 55,
+                    child: Column(
+                      children: [
+                        Icon(
+                          IconlyBold.edit,
+                          size: 25,
+                          color: index == 1 ? butonColor : textColor2,
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'Upload',
+                          style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w500,
+                            color: index == 1 ? butonColor : textColor2,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                //..............
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    width: 55,
+                    child: Column(
+                      children: [
+                        Icon(
+                          Icons.home,
+                          size: 25,
+                          color: index == 2 ? butonColor : textColor2,
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'Scan',
+                          style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w500,
+                            color: index == 2 ? butonColor : textColor2,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                //..............
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      index = 3;
+                    });
+                  },
+                  child: Container(
+                    width: 55,
+                    child: Column(
+                      children: [
+                        Icon(
+                          IconlyBold.notification,
+                          size: 25,
+                          color: index == 3 ? butonColor : textColor2,
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'Notification',
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w500,
+                            color: index == 3 ? butonColor : textColor2,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                //..............
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      index = 4;
+                    });
+                  },
+                  child: Container(
+                    width: 55,
+                    child: Column(
+                      children: [
+                        Icon(
+                          IconlyBold.profile,
+                          size: 25,
+                          color: index == 4 ? butonColor : textColor2,
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'Profile',
+                          style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w500,
+                            color: index == 4 ? butonColor : textColor2,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

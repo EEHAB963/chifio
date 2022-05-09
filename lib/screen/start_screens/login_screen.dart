@@ -4,6 +4,7 @@ import 'package:chefio/constans/colors.dart';
 import 'package:chefio/screen/start_screens/password_recovery.dart';
 import 'package:chefio/screen/start_screens/singUp_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -36,16 +37,16 @@ class LoginScreen extends StatelessWidget {
                 height: 20,
               ),
               MyTextFormFild(
-                icon: Icons.mail_outline,
+                icon: IconlyBroken.message,
                 text: 'Email or phone number',
               ),
               const SizedBox(
                 height: 20,
               ),
               MyTextFormFild(
-                  icon: Icons.lock,
+                  icon: IconlyBroken.lock,
                   text: 'Password',
-                  suffixIcon: Icons.remove_red_eye_outlined),
+                  suffixIcon: IconlyLight.hide),
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Row(

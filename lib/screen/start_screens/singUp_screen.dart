@@ -3,6 +3,7 @@ import 'package:chefio/Widget/my_text_form_fild.dart';
 import 'package:chefio/constans/colors.dart';
 import 'package:chefio/screen/start_screens/verification_code.dart';
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 
 class SingUpScreen extends StatelessWidget {
   const SingUpScreen({Key? key}) : super(key: key);
@@ -33,16 +34,16 @@ class SingUpScreen extends StatelessWidget {
                 height: 20,
               ),
               MyTextFormFild(
-                icon: Icons.mail_outline,
+                icon: IconlyBroken.message,
                 text: 'Email or phone number',
               ),
               const SizedBox(
                 height: 20,
               ),
               MyTextFormFild(
-                  icon: Icons.lock,
+                  icon: IconlyBroken.lock,
                   text: 'Password',
-                  suffixIcon: Icons.remove_red_eye_outlined),
+                  suffixIcon: IconlyLight.hide),
               const SizedBox(
                 height: 20,
               ),
