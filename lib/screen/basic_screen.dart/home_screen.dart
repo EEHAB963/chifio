@@ -20,19 +20,18 @@ class HomeScreen extends StatelessWidget {
             height: size.height,
             child: Stack(
               children: [
-                Container(
-                  height: size.height,
-                  child: Column(
-                    children: [
-                      Container(
-                          height: size.height - 60,
-                          child: provider.screens[provider.index]),
-                      BottomNavBarWidget(),
-                    ],
-                  ),
+                Column(
+                  children: [
+                    Container(
+                      height: size.height - 60,
+                      child: provider.screens[provider.index],
+                    ),
+                    Spacer(),
+                    BottomNavBarWidget(),
+                  ],
                 ),
                 Positioned(
-                  bottom: 28,
+                  top: size.height - 98,
                   left: size.width / 2 - 30,
                   right: size.width / 2 - 30,
                   child: const CircleAvatar(

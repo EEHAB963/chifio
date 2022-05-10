@@ -1,5 +1,4 @@
 import 'package:chefio/constans/colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -9,6 +8,7 @@ class ProductItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Colors.white,
       width: 155,
       height: 260,
       child: Column(
@@ -16,10 +16,14 @@ class ProductItemWidget extends StatelessWidget {
         children: [
           Row(
             children: [
-              const CircleAvatar(
-                radius: 20,
-                backgroundImage: AssetImage(
+              ClipRRect(
+                borderRadius: BorderRadius.circular(2),
+                clipBehavior: Clip.antiAlias,
+                child: Image.asset(
                   'assets/images/image 4.png',
+                  height: 40,
+                  width: 40,
+                  fit: BoxFit.cover,
                 ),
               ),
               const SizedBox(
@@ -55,7 +59,7 @@ class ProductItemWidget extends StatelessWidget {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: favorateColor),
-                      child: Icon(
+                      child: const Icon(
                         IconlyLight.heart,
                         color: Colors.white,
                       )),
@@ -67,7 +71,7 @@ class ProductItemWidget extends StatelessWidget {
             'Sald',
             style: Theme.of(context).textTheme.headline1,
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           Text(
