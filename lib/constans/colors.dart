@@ -5,3 +5,4 @@ const Color textColor2 = Color(0xFF9FA5C0);
 const Color butonColor = Color(0xFF1FCC79);
 const Color butonColorRed = Color(0xFFFF5842);
 const Color form = Color(0xFFF4F5F7);
+const Color favorateColor = Color.fromARGB(59, 255, 255, 255);

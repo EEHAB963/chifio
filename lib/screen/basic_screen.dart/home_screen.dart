@@ -9,9 +9,6 @@ import 'package:iconly/iconly.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
-  int x = 1;
-  int lr = 1;
-  int index = 0;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

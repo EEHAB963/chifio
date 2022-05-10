@@ -24,15 +24,19 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
           textTheme: const TextTheme(
-              headline1: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.w700,
-                color: textColor,
-              ),
-              headline2: TextStyle(
-                  fontSize: 17,
-                  fontWeight: FontWeight.w500,
-                  color: textColor2)),
+            headline1: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.w700,
+              color: textColor,
+            ),
+            headline2: TextStyle(
+                fontSize: 17, fontWeight: FontWeight.w500, color: textColor2),
+            headline3: TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.w500,
+              color: textColor,
+            ),
+          ),
           primarySwatch: Colors.blue,
         ),
         home: const StartScreen(),
