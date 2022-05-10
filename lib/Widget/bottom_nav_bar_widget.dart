@@ -21,7 +21,7 @@ class BottomNavBarWidget extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
-                        provider.index = 0;
+                        provider.clicBottomNavBar(0);
                       },
                       child: Container(
                         width: 55,
@@ -56,7 +56,7 @@ class BottomNavBarWidget extends StatelessWidget {
                     //................
                     InkWell(
                       onTap: () {
-                        provider.index = 1;
+                        provider.clicBottomNavBar(1);
                       },
                       child: Container(
                         width: 55,
@@ -118,7 +118,7 @@ class BottomNavBarWidget extends StatelessWidget {
                     //..............
                     InkWell(
                       onTap: () {
-                        provider.index = 3;
+                        provider.clicBottomNavBar(3);
                       },
                       child: Container(
                         width: 55,
@@ -151,7 +151,7 @@ class BottomNavBarWidget extends StatelessWidget {
                     //..............
                     InkWell(
                       onTap: () {
-                        provider.index = 4;
+                        provider.clicBottomNavBar(4);
                       },
                       child: Container(
                         width: 55,
