@@ -23,7 +23,7 @@ class StartScreen extends StatelessWidget {
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset(
-                    'assets/images/image 4.png',
+                    'assets/images/image 44.png',
                   ),
                 ),
                 Align(

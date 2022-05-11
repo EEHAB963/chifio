@@ -1,3 +1,4 @@
+import 'package:chefio/Widget/mnue_category.dart';
 import 'package:chefio/Widget/my_smole_buton.dart';
 import 'package:chefio/Widget/my_text_form_fild.dart';
 import 'package:chefio/Widget/product_item_widget.dart';
@@ -6,6 +7,8 @@ import 'package:chefio/provider/home_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:provider/provider.dart';
+
+import '../../Widget/left_and_right.dart';
 
 class HomeTap extends StatelessWidget {
   HomeTap({Key? key}) : super(key: key);
@@ -40,9 +43,8 @@ class HomeTap extends StatelessWidget {
                           style: Theme.of(context).textTheme.headline1,
                         ),
                       ),
-                      mnueCategory(
-                        provider.manuCategore,
-                        context,
+                      MnueCategory(
+                        x: provider.manuCategore,
                       ),
                       const SizedBox(
                         height: 10,
@@ -62,7 +64,7 @@ class HomeTap extends StatelessWidget {
                       const SizedBox(
                         height: 10,
                       ),
-                      laftAndRaet(context, provider.leftAndRaet),
+                      LeftAndRight(lr: provider.leftAndRaet),
                       Expanded(
                         child: Container(
                           padding: const EdgeInsets.only(left: 10, right: 10),
@@ -86,117 +88,6 @@ class HomeTap extends StatelessWidget {
           ),
         );
       },
-    );
-  }
-
-  mnueCategory(
-    int x,
-    BuildContext context,
-  ) {
-    return Row(
-      children: [
-        Expanded(
-          flex: 3,
-          child: MySmoleButon(
-            textColor: x == 1 ? Colors.white : textColor2,
-            color: x == 1 ? butonColor : form,
-            text: 'All',
-            onTap: () {
-              Provider.of<HomeProvider>(context, listen: false).clicCategore(1);
-              print(Provider.of<HomeProvider>(context, listen: false)
-                  .manuCategore);
-            },
-          ),
-        ),
-        Expanded(
-          flex: 3,
-          child: MySmoleButon(
-            textColor: x == 2 ? Colors.white : textColor2,
-            color: x == 2 ? butonColor : form,
-            text: 'Food',
-            onTap: () {
-              Provider.of<HomeProvider>(context, listen: false).clicCategore(2);
-              print(Provider.of<HomeProvider>(context, listen: false)
-                  .manuCategore);
-            },
-          ),
-        ),
-        Expanded(
-          flex: 3,
-          child: MySmoleButon(
-            textColor: x == 3 ? Colors.white : textColor2,
-            color: x == 3 ? butonColor : form,
-            text: 'Drink',
-            onTap: () {
-              Provider.of<HomeProvider>(context, listen: false).clicCategore(3);
-              print(Provider.of<HomeProvider>(context, listen: false)
-                  .manuCategore);
-            },
-          ),
-        ),
-        const Expanded(
-          flex: 2,
-          child: SizedBox(),
-        ),
-      ],
-    );
-  }
-
-  laftAndRaet(BuildContext context, bool lr) {
-    return SizedBox(
-      height: 50,
-      child: Row(
-        children: [
-          Expanded(
-            child: InkWell(
-              onTap: () {
-                Provider.of<HomeProvider>(context, listen: false).lr();
-                print(Provider.of<HomeProvider>(context, listen: false)
-                    .leftAndRaet);
-              },
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'left',
-                    style: lr == false
-                        ? Theme.of(context).textTheme.headline1
-                        : Theme.of(context).textTheme.headline2,
-                  ),
-                  Container(
-                    height: 3,
-                    color: lr == false ? butonColor : textColor2,
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            child: InkWell(
-              onTap: () {
-                Provider.of<HomeProvider>(context, listen: false).lr();
-                print(Provider.of<HomeProvider>(context, listen: false)
-                    .leftAndRaet);
-              },
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Raet',
-                    style: lr == true
-                        ? Theme.of(context).textTheme.headline1
-                        : Theme.of(context).textTheme.headline2,
-                  ),
-                  Container(
-                    height: 3,
-                    color: lr == true ? butonColor : textColor2,
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
