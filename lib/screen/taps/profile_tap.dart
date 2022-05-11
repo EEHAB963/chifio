@@ -1,11 +1,13 @@
 import 'package:chefio/Widget/left_and_right.dart';
+import 'package:chefio/Widget/my_bag_boton.dart';
 import 'package:chefio/Widget/product_item_widget.dart';
+import 'package:chefio/constans/colors.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:iconly/iconly.dart';
 
 class ProfileTap extends StatelessWidget {
-  const ProfileTap({Key? key}) : super(key: key);
-
+  ProfileTap({Key? key, this.followBottom = false}) : super(key: key);
+  bool followBottom = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,10 +25,22 @@ class ProfileTap extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      CircleAvatar(
-                        radius: 50,
-                        backgroundImage:
-                            AssetImage('assets/images/image 5.png'),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => HeroScreen(),
+                              ));
+                        },
+                        child: const Hero(
+                          tag: 'image profile',
+                          child: CircleAvatar(
+                            radius: 50,
+                            backgroundImage:
+                                AssetImage('assets/images/image 5.png'),
+                          ),
+                        ),
                       ),
                       Text(
                         'Choirul Syafril',
@@ -75,12 +89,15 @@ class ProfileTap extends StatelessWidget {
                             ],
                           ),
                         ],
-                      )
+                      ),
+                      followBottom == true
+                          ? MyTextButon(color: butonColor, text: 'Follow')
+                          : const SizedBox(),
                     ],
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               LeftAndRight(lr: true),
@@ -89,9 +106,11 @@ class ProfileTap extends StatelessWidget {
                 child: Container(
                   color: Colors.white,
                   child: GridView.count(
+                    padding: EdgeInsets.symmetric(horizontal: 30),
                     crossAxisCount: 2,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
+
+                    crossAxisSpacing: 35,
+                    // mainAxisSpacing: 10,
                     childAspectRatio: 1 / 1.6,
                     children: List.generate(
                       5,
@@ -105,5 +124,19 @@ class ProfileTap extends StatelessWidget {
             ],
           ),
         ));
+  }
+}
+
+class HeroScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Hero(
+          tag: 'image profile',
+          child: Image.asset('assets/images/image 5.png'),
+        ),
+      ),
+    );
   }
 }

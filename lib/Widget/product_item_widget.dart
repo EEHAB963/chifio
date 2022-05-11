@@ -1,4 +1,5 @@
 import 'package:chefio/constans/colors.dart';
+import 'package:chefio/screen/taps/profile_tap.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -14,26 +15,36 @@ class ProductItemWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: viweUiser == true
-                ? [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(2),
-                      clipBehavior: Clip.antiAlias,
-                      child: Image.asset(
-                        'assets/images/image 4.png',
-                        height: 40,
-                        width: 40,
-                        fit: BoxFit.cover,
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ProfileTap(followBottom: true),
+                ),
+              );
+            },
+            child: Row(
+              children: viweUiser == true
+                  ? [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(2),
+                        clipBehavior: Clip.antiAlias,
+                        child: Image.asset(
+                          'assets/images/image 4.png',
+                          height: 40,
+                          width: 40,
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Text('Calum Lewis',
-                        style: Theme.of(context).textTheme.headline3),
-                  ]
-                : [],
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text('Calum Lewis',
+                          style: Theme.of(context).textTheme.headline3),
+                    ]
+                  : [],
+            ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16),

@@ -49,8 +49,6 @@ class LeftAndRight extends StatelessWidget {
             child: InkWell(
               onTap: () {
                 Provider.of<HomeProvider>(context, listen: false).lr();
-                print(Provider.of<HomeProvider>(context, listen: false)
-                    .leftAndRaet);
               },
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
