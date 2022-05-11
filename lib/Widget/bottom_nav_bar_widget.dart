@@ -1,5 +1,6 @@
 import 'package:chefio/constans/colors.dart';
 import 'package:chefio/provider/home_provider.dart';
+import 'package:chefio/screen/taps/upload_tap.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:provider/provider.dart';
@@ -56,7 +57,11 @@ class BottomNavBarWidget extends StatelessWidget {
                     //................
                     InkWell(
                       onTap: () {
-                        provider.clicBottomNavBar(1);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => UploadTap(),
+                            ));
                       },
                       child: Container(
                         width: 55,
