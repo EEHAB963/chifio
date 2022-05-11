@@ -19,8 +19,6 @@ class MnueCategory extends StatelessWidget {
             text: 'All',
             onTap: () {
               Provider.of<HomeProvider>(context, listen: false).clicCategore(1);
-              print(Provider.of<HomeProvider>(context, listen: false)
-                  .manuCategore);
             },
           ),
         ),
@@ -32,8 +30,6 @@ class MnueCategory extends StatelessWidget {
             text: 'Food',
             onTap: () {
               Provider.of<HomeProvider>(context, listen: false).clicCategore(2);
-              print(Provider.of<HomeProvider>(context, listen: false)
-                  .manuCategore);
             },
           ),
         ),
@@ -45,8 +41,6 @@ class MnueCategory extends StatelessWidget {
             text: 'Drink',
             onTap: () {
               Provider.of<HomeProvider>(context, listen: false).clicCategore(3);
-              print(Provider.of<HomeProvider>(context, listen: false)
-                  .manuCategore);
             },
           ),
         ),

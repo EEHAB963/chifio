@@ -67,11 +67,12 @@ class HomeTap extends StatelessWidget {
                       LeftAndRight(lr: provider.leftAndRaet),
                       Expanded(
                         child: Container(
-                          padding: const EdgeInsets.only(left: 10, right: 10),
+                          // padding: const EdgeInsets.only(left: 10, right: 10),
                           child: GridView.count(
+                            padding: EdgeInsets.symmetric(horizontal: 23),
                             crossAxisCount: 2,
-                            crossAxisSpacing: 10,
-                            mainAxisSpacing: 10,
+
+                            //mainAxisSpacing: 10,
                             childAspectRatio: 1 / 1.6,
                             children: List.generate(
                               5,
