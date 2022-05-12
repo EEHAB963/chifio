@@ -1,5 +1,6 @@
 import 'package:chefio/provider/home_provider.dart';
 import 'package:chefio/screen/start_screens/start_screen.dart';
+import 'package:chefio/screen/taps/second_upload_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
           ),
           primarySwatch: Colors.blue,
         ),
-        home: const StartScreen(),
+        home: SecondUploadScreen(),
       ),
     );
   }
