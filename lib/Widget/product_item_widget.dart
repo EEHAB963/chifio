@@ -72,7 +72,7 @@ class ProductItemWidget extends StatelessWidget {
                       width: 30,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: favorateColor),
+                          color: favorateColor.withAlpha(200).withOpacity(.15)),
                       child: const Icon(
                         IconlyLight.heart,
                         color: Colors.white,
