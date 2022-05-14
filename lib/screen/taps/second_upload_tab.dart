@@ -102,7 +102,9 @@ class _SecondUploadScreenState extends State<SecondUploadScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       PrimaryButton(
-                          ontap: (() {}),
+                          ontap: (() {
+                            Navigator.pop(context);
+                          }),
                           colorText: textColor,
                           text: "Back",
                           buttonColor: Color(0xffF4F5F7)),

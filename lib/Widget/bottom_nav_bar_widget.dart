@@ -16,7 +16,7 @@ class BottomNavBarWidget extends StatelessWidget {
               color: Colors.white,
               height: 55,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 5),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -24,33 +24,31 @@ class BottomNavBarWidget extends StatelessWidget {
                       onTap: () {
                         provider.clicBottomNavBar(0);
                       },
-                      child: Container(
-                        width: 55,
-                        child: SizedBox(
-                          child: Column(
-                            children: [
-                              Icon(
-                                IconlyBold.home,
-                                size: 25,
+                      child: SizedBox(
+                        // width: 55,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Icon(
+                              IconlyBold.home,
+                              size: 25,
+                              color:
+                                  provider.index == 0 ? butonColor : textColor2,
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'Home',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
                                 color: provider.index == 0
                                     ? butonColor
                                     : textColor2,
                               ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                'Home',
-                                style: TextStyle(
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w500,
-                                  color: provider.index == 0
-                                      ? butonColor
-                                      : textColor2,
-                                ),
-                              ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -63,9 +61,10 @@ class BottomNavBarWidget extends StatelessWidget {
                               builder: (context) => UploadTap(),
                             ));
                       },
-                      child: Container(
-                        width: 55,
+                      child: SizedBox(
+                        // width: 55,
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Icon(
                               IconlyBold.edit,
@@ -79,7 +78,7 @@ class BottomNavBarWidget extends StatelessWidget {
                             Text(
                               'Upload',
                               style: TextStyle(
-                                fontSize: 17,
+                                fontSize: 12,
                                 fontWeight: FontWeight.w500,
                                 color: provider.index == 1
                                     ? butonColor
@@ -93,41 +92,42 @@ class BottomNavBarWidget extends StatelessWidget {
                     //..............
                     InkWell(
                       onTap: () {},
-                      child: Container(
-                        width: 55,
-                        child: Column(
-                          children: [
-                            Icon(
-                              Icons.home,
-                              size: 25,
-                              color:
-                                  provider.index == 2 ? butonColor : textColor2,
-                            ),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            Text(
-                              'Scan',
-                              style: TextStyle(
-                                fontSize: 17,
-                                fontWeight: FontWeight.w500,
-                                color: provider.index == 2
-                                    ? butonColor
-                                    : textColor2,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      child: SizedBox(
+                          //  width: 55,
+                          // child: Column(
+                          //   children: [
+                          //     Icon(
+                          //       Icons.home,
+                          //       size: 25,
+                          //       color:
+                          //           provider.index == 2 ? butonColor : textColor2,
+                          //     ),
+                          //     const SizedBox(
+                          //       height: 5,
+                          //     ),
+                          //     Text(
+                          //       'Scan',
+                          //       style: TextStyle(
+                          //         fontSize: 12,
+                          //         fontWeight: FontWeight.w500,
+                          //         color: provider.index == 2
+                          //             ? butonColor
+                          //             : textColor2,
+                          //       ),
+                          //     ),
+                          //   ],
+                          // ),
+                          ),
                     ),
                     //..............
                     InkWell(
                       onTap: () {
                         provider.clicBottomNavBar(3);
                       },
-                      child: Container(
-                        width: 55,
+                      child: SizedBox(
+                        // width: 55,
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Icon(
                               IconlyBold.notification,
@@ -140,9 +140,8 @@ class BottomNavBarWidget extends StatelessWidget {
                             ),
                             Text(
                               'Notification',
-                              overflow: TextOverflow.ellipsis,
                               style: TextStyle(
-                                fontSize: 17,
+                                fontSize: 12,
                                 fontWeight: FontWeight.w500,
                                 color: provider.index == 3
                                     ? butonColor
@@ -158,9 +157,10 @@ class BottomNavBarWidget extends StatelessWidget {
                       onTap: () {
                         provider.clicBottomNavBar(4);
                       },
-                      child: Container(
-                        width: 55,
+                      child: SizedBox(
+                        //width: 55,
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Icon(
                               IconlyBold.profile,
@@ -174,7 +174,7 @@ class BottomNavBarWidget extends StatelessWidget {
                             Text(
                               'Profile',
                               style: TextStyle(
-                                fontSize: 17,
+                                fontSize: 12,
                                 fontWeight: FontWeight.w500,
                                 color: provider.index == 4
                                     ? butonColor

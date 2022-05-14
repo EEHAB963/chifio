@@ -34,14 +34,27 @@ class HomeScreen extends StatelessWidget {
                   top: size.height - 98,
                   left: size.width / 2 - 30,
                   right: size.width / 2 - 30,
-                  child: const CircleAvatar(
-                    radius: 35,
-                    backgroundColor: butonColor,
-                    child: Icon(
-                      IconlyBold.scan,
-                      color: Colors.white,
-                      size: 30,
-                    ),
+                  child: Column(
+                    children: [
+                      const CircleAvatar(
+                        radius: 35,
+                        backgroundColor: butonColor,
+                        child: Icon(
+                          IconlyBold.scan,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      Text(
+                        'Scan',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          color: provider.index == 0 ? butonColor : textColor2,
+                        ),
+                      )
+                    ],
                   ),
                 )
               ],
