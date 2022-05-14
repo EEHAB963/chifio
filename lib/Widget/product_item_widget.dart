@@ -1,4 +1,5 @@
 import 'package:chefio/constans/colors.dart';
+import 'package:chefio/screen/basic_screen.dart/product_item_screen.dart';
 import 'package:chefio/screen/taps/profile_tap.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
@@ -50,18 +51,28 @@ class ProductItemWidget extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 16),
             child: Stack(
               children: [
-                Container(
-                  width: 150,
-                  height: 150,
-                  //clipBehavior: Clip.hardEdge,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: Image.asset(
-                    'assets/images/image 11.png',
-                    height: 150,
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ProductItemScreen(),
+                      ),
+                    );
+                  },
+                  child: Container(
                     width: 150,
-                    fit: BoxFit.fill,
+                    height: 150,
+                    //clipBehavior: Clip.hardEdge,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    child: Image.asset(
+                      'assets/images/image 11.png',
+                      height: 150,
+                      width: 150,
+                      fit: BoxFit.fill,
+                    ),
                   ),
                 ),
                 Positioned(
