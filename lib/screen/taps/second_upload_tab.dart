@@ -102,12 +102,18 @@ class _SecondUploadScreenState extends State<SecondUploadScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       PrimaryButton(
+
                           onTap: () {},
+
+
                           colorText: textColor,
                           text: "Back",
                           buttonColor: Color(0xffF4F5F7)),
                       PrimaryButton(
+
                         onTap: () {},
+
+
                         colorText: Colors.white,
                         text: "Next",
                         buttonColor: butonColor,
@@ -261,5 +267,41 @@ class _SecondUploadScreenState extends State<SecondUploadScreen> {
         ],
       ),
     );
+  }
+
+  Future openDialog() {
+    return showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              content: Container(
+                padding: EdgeInsets.all(20),
+                height: 400,
+                width: 327,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image.asset("assets/images/emoji.png"),
+                    Text(
+                      "Upload success",
+                      style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w700,
+                          color: Color(0xff3E5481)),
+                    ),
+                    Text("Your recipe has benn uploaded "),
+                    Text("you can see it in your profile"),
+                    PrimaryButton(
+                      width: 300,
+                      text: "Back to Home",
+                      buttonColor: butonColor,
+                      ontap: () {
+                        Navigator.pop(context);
+                      },
+                      colorText: Colors.white,
+                    )
+                  ],
+                ),
+              ),
+            ));
   }
 }
