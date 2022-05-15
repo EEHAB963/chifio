@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'constans/colors.dart';
+import 'screen/taps/upload_tap.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,7 +41,9 @@ class MyApp extends StatelessWidget {
           ),
           primarySwatch: Colors.blue,
         ),
+
         home: StartScreen(),
+
       ),
     );
   }

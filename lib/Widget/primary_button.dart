@@ -8,23 +8,27 @@ class PrimaryButton extends StatelessWidget {
     Key? key,
     required this.text,
     required this.buttonColor,
-    required this.ontap,
+
     required this.colorText,
-    this.width = 156,
+    required this.onTap,
+
   }) : super(key: key);
   String text;
   Color buttonColor;
   Color colorText;
-  VoidCallback ontap;
-  double width;
+
+  VoidCallback onTap;
+
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: ontap,
+
+      onTap: onTap,
       child: Container(
         alignment: Alignment.center,
-        width: width,
+        width: 156,
+
         height: 56,
         child: Text(
           text,
