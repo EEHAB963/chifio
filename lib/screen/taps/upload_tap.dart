@@ -1,4 +1,3 @@
-import 'package:chefio/Widget/custom_bottom_sheet.dart';
 import 'package:chefio/Widget/custom_slider.dart';
 import 'package:chefio/Widget/my_bag_boton.dart';
 import 'package:chefio/constans/colors.dart';
@@ -13,8 +12,6 @@ class UploadTap extends StatefulWidget {
 }
 
 class _UploadTapState extends State<UploadTap> {
-  double slider = 30;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,51 +45,6 @@ class _UploadTapState extends State<UploadTap> {
                   SizedBox(
                     height: 15,
                   ),
-
-                  TextFormField(
-                    decoration: InputDecoration(
-                        hintText: "Enter Food Name",
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30))),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    "Description",
-                    style: TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.w600,
-                        color: textColor),
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  TextFormField(
-                    maxLines: 4,
-                    decoration: InputDecoration(
-                        hintText: "Tell a little about your food",
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        )),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Container(
-                    child: CustomSlider(),
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  MyTextButon(
-                    color: butonColor,
-                    text: "Next",
-                    onTap: () {},
-                  ),
-                ]),
-              ],
-
                   Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -140,9 +92,7 @@ class _UploadTapState extends State<UploadTap> {
                         SizedBox(
                           height: 20,
                         ),
-                        Container(
-                          child: sliderDesign(),
-                        ),
+                        Container(child: CustomSlider()),
                         SizedBox(
                           height: 15,
                         ),
@@ -161,7 +111,6 @@ class _UploadTapState extends State<UploadTap> {
                       ]),
                 ],
               ),
-
             ),
           ),
         ));
