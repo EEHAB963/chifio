@@ -1,6 +1,6 @@
 import 'package:chefio/Widget/bottom_nav_bar_widget.dart';
-import 'package:chefio/Widget/my_smole_buton.dart';
-import 'package:chefio/Widget/my_text_form_fild.dart';
+import 'package:chefio/Widget/menu_button.dart';
+import 'package:chefio/Widget/text_form_fild.dart';
 import 'package:chefio/constans/colors.dart';
 import 'package:chefio/provider/home_provider.dart';
 import 'package:chefio/screen/taps/home_tap.dart';
@@ -28,7 +28,6 @@ class HomeScreen extends StatelessWidget {
                       height: size.height - 60,
                       child: provider.screens[provider.index],
                     ),
-                    Spacer(),
                     BottomNavBarWidget(),
                   ],
                 ),
@@ -47,7 +46,7 @@ class HomeScreen extends StatelessWidget {
                         },
                         child: const CircleAvatar(
                           radius: 35,
-                          backgroundColor: butonColor,
+                          backgroundColor: buttonColor,
                           child: Icon(
                             IconlyBold.scan,
                             color: Colors.white,
@@ -61,7 +60,7 @@ class HomeScreen extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w500,
-                          color: provider.index == 2 ? butonColor : textColor2,
+                          color: provider.index == 2 ? buttonColor : textColor2,
                         ),
                       )
                     ],

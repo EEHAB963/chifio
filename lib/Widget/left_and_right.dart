@@ -39,7 +39,7 @@ class LeftAndRight extends StatelessWidget {
                   ),
                   Container(
                     height: 3,
-                    color: lr == false ? butonColor : textColor2,
+                    color: lr == false ? buttonColor : textColor2,
                   ),
                 ],
               ),
@@ -61,7 +61,7 @@ class LeftAndRight extends StatelessWidget {
                   ),
                   Container(
                     height: 3,
-                    color: lr == true ? butonColor : textColor2,
+                    color: lr == true ? buttonColor : textColor2,
                   ),
                 ],
               ),

@@ -32,7 +32,7 @@ class ProductItemWidget extends StatelessWidget {
                         borderRadius: BorderRadius.circular(2),
                         clipBehavior: Clip.antiAlias,
                         child: Image.asset(
-                          'assets/images/image 4.png',
+                          'assets/images/image4.png',
                           height: 40,
                           width: 40,
                           fit: BoxFit.cover,

@@ -3,8 +3,8 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 
 import '../constans/colors.dart';
 
-class PainCodeWidget extends StatelessWidget {
-  const PainCodeWidget({Key? key}) : super(key: key);
+class PinCodeWidget extends StatelessWidget {
+  const PinCodeWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class PainCodeWidget extends StatelessWidget {
             borderWidth: 2,
             fieldHeight: 60,
             fieldWidth: 60,
-            selectedColor: butonColor,
+            selectedColor: buttonColor,
             activeColor: Colors.grey,
             inactiveColor: Colors.grey),
       ),

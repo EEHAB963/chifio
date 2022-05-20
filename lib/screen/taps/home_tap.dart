@@ -1,6 +1,6 @@
-import 'package:chefio/Widget/mnue_category.dart';
-import 'package:chefio/Widget/my_smole_buton.dart';
-import 'package:chefio/Widget/my_text_form_fild.dart';
+import 'package:chefio/Widget/menu_category.dart';
+import 'package:chefio/Widget/menu_button.dart';
+import 'package:chefio/Widget/text_form_fild.dart';
 import 'package:chefio/Widget/product_item_widget.dart';
 import 'package:chefio/constans/colors.dart';
 import 'package:chefio/provider/home_provider.dart';
@@ -32,7 +32,7 @@ class HomeTap extends StatelessWidget {
                       const SizedBox(
                         height: 50,
                       ),
-                      MyTextFormFild(
+                      CustomTextFormFild(
                         icon: IconlyBroken.search,
                         text: 'Search',
                       ),
@@ -43,7 +43,7 @@ class HomeTap extends StatelessWidget {
                           style: Theme.of(context).textTheme.headline1,
                         ),
                       ),
-                      MnueCategory(
+                      MenuCategory(
                         x: provider.manuCategore,
                       ),
                       const SizedBox(

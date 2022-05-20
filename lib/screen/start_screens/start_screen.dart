@@ -1,4 +1,4 @@
-import 'package:chefio/Widget/my_bag_boton.dart';
+import 'package:chefio/Widget/big_botton.dart';
 import 'package:chefio/constans/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -79,7 +79,7 @@ class StartScreen extends StatelessWidget {
                     width: 209,
                     child: Text(
                       "Let’s join our communityto cook better food!",
-                      style: Theme.of(context).textTheme.headline2,
+                      style: Theme.of(context).textTheme.bodyText1,
                     ),
                   ),
                   const SizedBox(
@@ -94,7 +94,8 @@ class StartScreen extends StatelessWidget {
                           ),
                         );
                       },
-                      child: MyTextButon(color: butonColor, text: 'Get Start')),
+                      child:
+                          MyTextButon(color: buttonColor, text: 'Get Start')),
                 ],
               ),
             ),

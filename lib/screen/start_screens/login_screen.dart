@@ -1,5 +1,5 @@
-import 'package:chefio/Widget/my_bag_boton.dart';
-import 'package:chefio/Widget/my_text_form_fild.dart';
+import 'package:chefio/Widget/big_botton.dart';
+import 'package:chefio/Widget/text_form_fild.dart';
 import 'package:chefio/constans/colors.dart';
 import 'package:chefio/screen/start_screens/password_recovery.dart';
 import 'package:chefio/screen/start_screens/singUp_screen.dart';
@@ -31,19 +31,19 @@ class LoginScreen extends StatelessWidget {
               ),
               Text(
                 'Please enter your account here',
-                style: Theme.of(context).textTheme.headline2,
+                style: Theme.of(context).textTheme.bodyText1,
               ),
               const SizedBox(
                 height: 20,
               ),
-              MyTextFormFild(
+              CustomTextFormFild(
                 icon: IconlyBroken.message,
                 text: 'Email or phone number',
               ),
               const SizedBox(
                 height: 20,
               ),
-              MyTextFormFild(
+              CustomTextFormFild(
                   icon: IconlyBroken.lock,
                   text: 'Password',
                   suffixIcon: IconlyLight.hide),
@@ -71,16 +71,16 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 80,
               ),
-              MyTextButon(color: butonColor, text: 'Login'),
+              MyTextButon(color: buttonColor, text: 'Login'),
               const SizedBox(
                 height: 20,
               ),
               Text('Or continue with',
-                  style: Theme.of(context).textTheme.headline2),
+                  style: Theme.of(context).textTheme.bodyText1),
               const SizedBox(
                 height: 20,
               ),
-              MyTextButon(color: butonColorRed, text: 'G googel'),
+              MyTextButon(color: buttonColorRed, text: 'G googel'),
               const SizedBox(
                 height: 20,
               ),
@@ -97,7 +97,13 @@ class LoginScreen extends StatelessWidget {
                         ),
                       );
                     },
-                    child: const Text('Sign Up'),
+                    child: Text(
+                      'Sign Up',
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline3!
+                          .copyWith(color: buttonColor),
+                    ),
                   ),
                 ],
               ),

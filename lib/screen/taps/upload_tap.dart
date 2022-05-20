@@ -1,8 +1,10 @@
 import 'package:chefio/Widget/custom_slider.dart';
-import 'package:chefio/Widget/my_bag_boton.dart';
+import 'package:chefio/Widget/big_botton.dart';
 import 'package:chefio/constans/colors.dart';
 import 'package:chefio/screen/taps/second_upload_tab.dart';
 import 'package:flutter/material.dart';
+
+import '../../Widget/custom_bottom_sheet.dart';
 
 class UploadTap extends StatefulWidget {
   UploadTap({Key? key}) : super(key: key);
@@ -33,7 +35,7 @@ class _UploadTapState extends State<UploadTap> {
                             "Cancel",
                             style: TextStyle(
                               fontSize: 17,
-                              color: butonColorRed,
+                              color: buttonColorRed,
                             ),
                           )),
                       Text(
@@ -52,32 +54,23 @@ class _UploadTapState extends State<UploadTap> {
                         SizedBox(
                           height: 20,
                         ),
-                        Text(
-                          "Food Name",
-                          style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.w600,
-                              color: textColor),
-                        ),
+                        Text("Food Name",
+                            style: Theme.of(context).textTheme.headline2),
                         SizedBox(
                           height: 15,
                         ),
                         TextFormField(
                           decoration: InputDecoration(
                               hintText: "Enter Food Name",
+                              hintStyle: Theme.of(context).textTheme.subtitle1,
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30))),
                         ),
                         SizedBox(
                           height: 20,
                         ),
-                        Text(
-                          "Description",
-                          style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.w600,
-                              color: textColor),
-                        ),
+                        Text("Description",
+                            style: Theme.of(context).textTheme.headline2),
                         SizedBox(
                           height: 15,
                         ),
@@ -85,6 +78,7 @@ class _UploadTapState extends State<UploadTap> {
                           maxLines: 4,
                           decoration: InputDecoration(
                               hintText: "Tell a little about your food",
+                              hintStyle: Theme.of(context).textTheme.subtitle1,
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
                               )),
@@ -97,7 +91,7 @@ class _UploadTapState extends State<UploadTap> {
                           height: 15,
                         ),
                         MyTextButon(
-                          color: butonColor,
+                          color: buttonColor,
                           text: "Next",
                           onTap: () {
                             Navigator.push(

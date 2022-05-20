@@ -1,8 +1,8 @@
-import 'package:chefio/Widget/my_smole_buton.dart';
+import 'package:chefio/Widget/menu_button.dart';
 import 'package:chefio/constans/colors.dart';
 import 'package:flutter/material.dart';
 
-import '../../Widget/my_bag_boton.dart';
+import '../../Widget/big_botton.dart';
 import '../../Widget/primary_button.dart';
 
 class SecondUploadScreen extends StatefulWidget {
@@ -36,13 +36,14 @@ class _SecondUploadScreenState extends State<SecondUploadScreen> {
                             onPressed: () {},
                             child: Text(
                               "Cancel",
-                              style:
-                                  TextStyle(color: butonColorRed, fontSize: 17),
+                              style: TextStyle(
+                                  color: buttonColorRed, fontSize: 17),
                             ),
                           ),
                           Text(
                             "2/2",
-                            style: TextStyle(fontSize: 17, color: textColor),
+                            style:
+                                TextStyle(fontSize: 17, color: headLineColor),
                           )
                         ],
                       ),
@@ -54,15 +55,12 @@ class _SecondUploadScreenState extends State<SecondUploadScreen> {
                         children: [
                           Text(
                             "Ingrediant",
-                            style: TextStyle(
-                                fontSize: 17,
-                                fontWeight: FontWeight.w700,
-                                color: textColor),
+                            style: Theme.of(context).textTheme.headline2,
                           ),
                           TextButton.icon(
                               style: ButtonStyle(
                                 foregroundColor:
-                                    MaterialStateProperty.all(textColor),
+                                    MaterialStateProperty.all(headLineColor),
                               ),
                               onPressed: () {},
                               icon: Icon(
@@ -103,14 +101,16 @@ class _SecondUploadScreenState extends State<SecondUploadScreen> {
                     children: [
                       PrimaryButton(
                           onTap: (() {}),
-                          colorText: textColor,
+                          colorText: headLineColor,
                           text: "Back",
                           buttonColor: Color(0xffF4F5F7)),
                       PrimaryButton(
-                        onTap: () {},
+                        onTap: () {
+                          openDialog();
+                        },
                         colorText: Colors.white,
                         text: "Next",
-                        buttonColor: butonColor,
+                        buttonColor: buttonColor,
                       ),
                     ],
                   )
@@ -132,7 +132,9 @@ class _SecondUploadScreenState extends State<SecondUploadScreen> {
           Text(
             "Steps",
             style: TextStyle(
-                color: textColor, fontSize: 17, fontWeight: FontWeight.w700),
+                color: headLineColor,
+                fontSize: 17,
+                fontWeight: FontWeight.w700),
           ),
           SizedBox(
             height: 20,
@@ -144,7 +146,7 @@ class _SecondUploadScreenState extends State<SecondUploadScreen> {
                 children: [
                   CircleAvatar(
                       radius: 10,
-                      backgroundColor: textColor,
+                      backgroundColor: headLineColor,
                       child: Text(
                         "1",
                         style: TextStyle(color: Colors.white, fontSize: 12),
@@ -218,7 +220,7 @@ class _SecondUploadScreenState extends State<SecondUploadScreen> {
           alignment: Alignment.center,
           height: 50,
           decoration: BoxDecoration(
-            border: Border.all(width: 1, color: textColor),
+            border: Border.all(width: 1, color: headLineColor),
             borderRadius: BorderRadius.circular(25),
           ),
           child: Row(
@@ -228,7 +230,7 @@ class _SecondUploadScreenState extends State<SecondUploadScreen> {
               Text("Ingrediant",
                   style: TextStyle(
                     fontSize: 15,
-                    color: textColor,
+                    color: headLineColor,
                     fontWeight: FontWeight.w500,
                   )),
             ],
@@ -261,5 +263,43 @@ class _SecondUploadScreenState extends State<SecondUploadScreen> {
         ],
       ),
     );
+  }
+
+  Future openDialog() {
+    return showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              content: Container(
+                padding: EdgeInsets.all(20),
+                height: 400,
+                width: 327,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image.asset("assets/images/emoji.png"),
+                    Text(
+                      "Upload success",
+                      style: Theme.of(context).textTheme.headline1,
+                    ),
+                    Text(
+                      "Your recipe has benn uploaded ",
+                      style: Theme.of(context).textTheme.bodyText2,
+                    ),
+                    Text(
+                      "you can see it in your profile",
+                      style: Theme.of(context).textTheme.bodyText2,
+                    ),
+                    PrimaryButton(
+                      text: "Back to Home",
+                      buttonColor: buttonColor,
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      colorText: Colors.white,
+                    )
+                  ],
+                ),
+              ),
+            ));
   }
 }
