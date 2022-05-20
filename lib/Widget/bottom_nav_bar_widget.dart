@@ -32,8 +32,9 @@ class BottomNavBarWidget extends StatelessWidget {
                             Icon(
                               IconlyBold.home,
                               size: 25,
-                              color:
-                                  provider.index == 0 ? butonColor : textColor2,
+                              color: provider.index == 0
+                                  ? buttonColor
+                                  : textColor2,
                             ),
                             const SizedBox(
                               height: 5,
@@ -44,7 +45,7 @@ class BottomNavBarWidget extends StatelessWidget {
                                 fontSize: 12,
                                 fontWeight: FontWeight.w500,
                                 color: provider.index == 0
-                                    ? butonColor
+                                    ? buttonColor
                                     : textColor2,
                               ),
                             ),
@@ -69,8 +70,9 @@ class BottomNavBarWidget extends StatelessWidget {
                             Icon(
                               IconlyBold.edit,
                               size: 25,
-                              color:
-                                  provider.index == 1 ? butonColor : textColor2,
+                              color: provider.index == 1
+                                  ? buttonColor
+                                  : textColor2,
                             ),
                             const SizedBox(
                               height: 5,
@@ -81,7 +83,7 @@ class BottomNavBarWidget extends StatelessWidget {
                                 fontSize: 12,
                                 fontWeight: FontWeight.w500,
                                 color: provider.index == 1
-                                    ? butonColor
+                                    ? buttonColor
                                     : textColor2,
                               ),
                             ),
@@ -132,8 +134,9 @@ class BottomNavBarWidget extends StatelessWidget {
                             Icon(
                               IconlyBold.notification,
                               size: 25,
-                              color:
-                                  provider.index == 3 ? butonColor : textColor2,
+                              color: provider.index == 3
+                                  ? buttonColor
+                                  : textColor2,
                             ),
                             const SizedBox(
                               height: 5,
@@ -144,7 +147,7 @@ class BottomNavBarWidget extends StatelessWidget {
                                 fontSize: 12,
                                 fontWeight: FontWeight.w500,
                                 color: provider.index == 3
-                                    ? butonColor
+                                    ? buttonColor
                                     : textColor2,
                               ),
                             ),
@@ -165,8 +168,9 @@ class BottomNavBarWidget extends StatelessWidget {
                             Icon(
                               IconlyBold.profile,
                               size: 25,
-                              color:
-                                  provider.index == 4 ? butonColor : textColor2,
+                              color: provider.index == 4
+                                  ? buttonColor
+                                  : textColor2,
                             ),
                             const SizedBox(
                               height: 5,
@@ -177,7 +181,7 @@ class BottomNavBarWidget extends StatelessWidget {
                                 fontSize: 12,
                                 fontWeight: FontWeight.w500,
                                 color: provider.index == 4
-                                    ? butonColor
+                                    ? buttonColor
                                     : textColor2,
                               ),
                             ),

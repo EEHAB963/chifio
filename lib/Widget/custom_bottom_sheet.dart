@@ -1,32 +1,28 @@
 import 'package:chefio/Widget/custom_slider.dart';
-import 'package:chefio/Widget/mnue_category.dart';
+import 'package:chefio/Widget/menu_category.dart';
 import 'package:chefio/Widget/primary_button.dart';
 import 'package:chefio/constans/colors.dart';
 import 'package:flutter/material.dart';
 
-class CoustomBottomSheet extends StatefulWidget {
-  const CoustomBottomSheet({Key? key}) : super(key: key);
+class CoustomBottomSheet extends StatelessWidget {
+  CoustomBottomSheet({Key? key, required this.filtterIcon}) : super(key: key);
+  IconData filtterIcon;
 
-  @override
-  State<CoustomBottomSheet> createState() => _CoustomBottomSheetState();
-}
-
-class _CoustomBottomSheetState extends State<CoustomBottomSheet> {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: Icon(Icons.filter_list),
+      icon: Icon(filtterIcon),
       onPressed: () {
         showBottomSheet(
           enableDrag: false,
           context: context,
-          builder: (context) => buildSheet(),
+          builder: (context) => buildSheet(context),
         );
       },
     );
   }
 
-  Widget buildSheet() {
+  Widget buildSheet(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.vertical(
@@ -43,18 +39,22 @@ class _CoustomBottomSheetState extends State<CoustomBottomSheet> {
               child: Text(
             "Add a filtter",
             style: TextStyle(
-                fontSize: 17, fontWeight: FontWeight.w700, color: textColor),
+                fontSize: 17,
+                fontWeight: FontWeight.w700,
+                color: headLineColor),
           )),
           SizedBox(
             height: 25,
           ),
           Text("Category",
               style: TextStyle(
-                  fontSize: 17, fontWeight: FontWeight.w700, color: textColor)),
+                  fontSize: 17,
+                  fontWeight: FontWeight.w700,
+                  color: headLineColor)),
           SizedBox(
             height: 20,
           ),
-          MnueCategory(x: 1),
+          MenuCategory(x: 1),
           SizedBox(
             height: 20,
           ),
@@ -71,12 +71,12 @@ class _CoustomBottomSheetState extends State<CoustomBottomSheet> {
                 }),
                 text: "Back",
                 buttonColor: Color(0xffF4F5F7),
-                colorText: textColor,
+                colorText: headLineColor,
               ),
               PrimaryButton(
                   onTap: () {},
                   text: "Next",
-                  buttonColor: butonColor,
+                  buttonColor: buttonColor,
                   colorText: Colors.white)
             ],
           )

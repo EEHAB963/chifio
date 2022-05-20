@@ -1,19 +1,21 @@
-
 import 'package:flutter/material.dart';
 
-
 class PrimaryButton extends StatelessWidget {
-  PrimaryButton(
-      {Key? key,
-      required this.text,
-      required this.buttonColor,
-      required this.colorText,
-      required this.onTap})
-      : super(key: key);
+  PrimaryButton({
+    Key? key,
+    required this.text,
+    required this.buttonColor,
+    required this.colorText,
+    required this.onTap,
+    this.width = 156,
+    this.hight = 56,
+  }) : super(key: key);
   String text;
   Color buttonColor;
   Color colorText;
   VoidCallback onTap;
+  double width;
+  double hight;
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +23,8 @@ class PrimaryButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         alignment: Alignment.center,
-        width: 156,
-        height: 56,
+        width: width,
+        height: hight,
         child: Text(
           text,
           style: TextStyle(

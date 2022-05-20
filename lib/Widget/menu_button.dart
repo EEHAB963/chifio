@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class MySmoleButon extends StatelessWidget {
-  MySmoleButon({
+class menuButton extends StatelessWidget {
+  menuButton({
     Key? key,
     required this.color,
     this.colorBorder,
     this.textColor,
     required this.text,
     this.onTap,
-    this.width = 0,
+    this.width = 20,
   }) : super(key: key);
   Function()? onTap;
   Color color;
@@ -25,7 +25,7 @@ class MySmoleButon extends StatelessWidget {
         onTap: onTap,
         child: Container(
           alignment: Alignment.center,
-          width: width!,
+          width: width,
           height: 56,
           decoration: BoxDecoration(
             color: color,

@@ -87,7 +87,7 @@ class ProductItemScreen extends StatelessWidget {
                       color: Colors.white,
                     ),
                     radius: 25,
-                    backgroundColor: butonColor,
+                    backgroundColor: buttonColor,
                   ),
                   const SizedBox(
                     width: 5,
@@ -156,7 +156,7 @@ class ProductItemScreen extends StatelessWidget {
               ListTile(
                 leading: CircleAvatar(
                   radius: 13,
-                  backgroundColor: textColor,
+                  backgroundColor: headLineColor,
                   child: Text(
                     '1',
                     style: Theme.of(context).textTheme.headline3!.copyWith(

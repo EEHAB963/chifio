@@ -1,5 +1,5 @@
-import 'package:chefio/Widget/my_bag_boton.dart';
-import 'package:chefio/Widget/my_text_form_fild.dart';
+import 'package:chefio/Widget/big_botton.dart';
+import 'package:chefio/Widget/text_form_fild.dart';
 import 'package:chefio/constans/colors.dart';
 import 'package:chefio/screen/start_screens/verification_code.dart';
 import 'package:flutter/material.dart';
@@ -26,15 +26,16 @@ class PasswordRecovery extends StatelessWidget {
               ),
               Text(
                 'Enter your email to recover your password',
-                style: Theme.of(context).textTheme.headline2,
+                style: Theme.of(context).textTheme.bodyText1,
               ),
               const SizedBox(
                 height: 20,
               ),
-              MyTextFormFild(icon: Icons.email, text: 'Email or phone number'),
+              CustomTextFormFild(
+                  icon: Icons.email, text: 'Email or phone number'),
               const SizedBox(height: 50),
               MyTextButon(
-                color: butonColor,
+                color: buttonColor,
                 text: 'Verify',
               ),
             ],

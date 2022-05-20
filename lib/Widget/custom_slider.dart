@@ -20,11 +20,11 @@ class _CustomSliderState extends State<CustomSlider> {
           children: [
             Text(
               "Cooking Duration  ",
-              style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+              style: Theme.of(context).textTheme.headline2,
             ),
             Text(
               "( in minutes )",
-              style: TextStyle(fontSize: 15, color: textColor2),
+              style: Theme.of(context).textTheme.bodyText1,
             )
           ],
         ),
@@ -39,15 +39,15 @@ class _CustomSliderState extends State<CustomSlider> {
               children: [
                 Text(
                   "< 10",
-                  style:
-                      TextStyle(color: butonColor, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      color: buttonColor, fontWeight: FontWeight.bold),
                 ),
                 Text("30",
                     style: TextStyle(
-                        color: butonColor, fontWeight: FontWeight.bold)),
+                        color: buttonColor, fontWeight: FontWeight.bold)),
                 Text("> 60",
                     style: TextStyle(
-                        color: butonColor, fontWeight: FontWeight.bold)),
+                        color: buttonColor, fontWeight: FontWeight.bold)),
               ],
             ),
           ),
