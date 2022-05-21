@@ -9,6 +9,7 @@ class PrimaryButton extends StatelessWidget {
     required this.onTap,
     this.width = 156,
     this.hight = 56,
+    this.fontSize = 17,
   }) : super(key: key);
   String text;
   Color buttonColor;
@@ -16,6 +17,7 @@ class PrimaryButton extends StatelessWidget {
   VoidCallback onTap;
   double width;
   double hight;
+  double fontSize;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,9 @@ class PrimaryButton extends StatelessWidget {
         child: Text(
           text,
           style: TextStyle(
-              color: colorText, fontSize: 17, fontWeight: FontWeight.w700),
+              color: colorText,
+              fontSize: fontSize,
+              fontWeight: FontWeight.w700),
         ),
         decoration: BoxDecoration(
             color: buttonColor,

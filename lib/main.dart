@@ -1,4 +1,5 @@
 import 'package:chefio/provider/home_provider.dart';
+import 'package:chefio/screen/taps/upload_tap.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -56,7 +57,7 @@ class MyApp extends StatelessWidget {
                   color: textColor2)),
           primarySwatch: Colors.blue,
         ),
-        home: StartScreen(),
+        home: NotifictionTap(),
       ),
     );
   }
