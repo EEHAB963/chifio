@@ -10,34 +10,68 @@ class NotifictionTap extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          body: Column(
-        children: [
-          followNotification(),
-          likedNotification(),
-          // aa(),
-        ],
+          body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15.0),
+                child: Text(
+                  "New",
+                  style: Theme.of(context).textTheme.headline1,
+                ),
+              ),
+              followNotification(),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15.0),
+                child: Text(
+                  "Today",
+                  style: Theme.of(context).textTheme.headline1,
+                ),
+              ),
+              likedNotification(),
+              followNotification(),
+              likedNotification(),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15.0),
+                child: Text(
+                  "yesterday",
+                  style: Theme.of(context).textTheme.headline1,
+                ),
+              ),
+              followNotification(),
+              followNotification()
+            ],
+          ),
+        ),
       )),
     );
   }
 
   likedNotification() {
-    return SizedBox(
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 15.0),
       child: Row(
         children: [
           SizedBox(
-            height: 100,
+            height: 80,
             width: 80,
             child: Stack(
-              alignment: Alignment.bottomLeft,
+              clipBehavior: Clip.none,
               children: [
                 CircleAvatar(
-                  radius: 40,
+                  radius: 30,
                   backgroundImage:
                       AssetImage("assets/images/Rectangle 196.png"),
                 ),
-                CircleAvatar(
-                  backgroundImage: AssetImage("assets/images/image4.png"),
-                  radius: 30,
+                Positioned(
+                  bottom: 17,
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage("assets/images/image4.png"),
+                    radius: 25,
+                  ),
                 )
               ],
             ),
@@ -49,38 +83,27 @@ class NotifictionTap extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  children: [
-                    Text(
-                      "John steve",
+                RichText(
+                  maxLines: 2,
+                  text: TextSpan(
+                      text: "John steve ",
                       style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.w700,
                           color: headLineColor),
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Text(
-                      "and",
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w700,
-                          color: textColor2),
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Expanded(
-                      child: Text(
-                        "sam Winchester",
-                        style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w700,
-                            color: headLineColor),
-                      ),
-                    )
-                  ],
+                      children: [
+                        TextSpan(
+                            text: "  and \n",
+                            style: TextStyle(
+                              color: textColor2,
+                            )),
+                        TextSpan(
+                          text: "sam Winchester ",
+                        ),
+                      ]),
+                ),
+                SizedBox(
+                  height: 5,
                 ),
                 Row(
                   children: [
@@ -107,6 +130,9 @@ class NotifictionTap extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(
+            width: 10,
+          ),
           Row(
             children: [
               Container(
@@ -127,15 +153,12 @@ class NotifictionTap extends StatelessWidget {
   }
 
   followNotification() {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Container(
-          margin: EdgeInsets.symmetric(vertical: 15),
-          padding: EdgeInsets.symmetric(
-            horizontal: 15,
-          ),
-          child: Row(
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 15.0),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
@@ -191,6 +214,7 @@ class NotifictionTap extends StatelessWidget {
               Row(
                 children: [
                   PrimaryButton(
+                    fontSize: 14,
                     text: "follow",
                     buttonColor: buttonColor,
                     colorText: Colors.white,
@@ -202,15 +226,8 @@ class NotifictionTap extends StatelessWidget {
               )
             ],
           ),
-        ),
-      ],
-    );
-  }
-
-  aa() {
-    SizedBox(
-      height: 300,
-      child: Row(children: [Stack(), Column(), Container()]),
+        ],
+      ),
     );
   }
 }
