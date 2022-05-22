@@ -16,7 +16,12 @@ class ScanCamera extends StatelessWidget {
               pinned: true,
             ),
             SliverFillRemaining(
-              child: Text('dfjdhfjhdf'),
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.black),
+                child: Text('dfjdhfjhdf'),
+              ),
             ),
           ],
         ),
