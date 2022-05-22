@@ -36,9 +36,6 @@ class BottomNavBarWidget extends StatelessWidget {
                                   ? buttonColor
                                   : textColor2,
                             ),
-                            const SizedBox(
-                              height: 5,
-                            ),
                             Text(
                               'Home',
                               style: TextStyle(
@@ -57,10 +54,11 @@ class BottomNavBarWidget extends StatelessWidget {
                     InkWell(
                       onTap: () {
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => UploadTap(),
-                            ));
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => UploadTap(),
+                          ),
+                        );
                       },
                       child: SizedBox(
                         // width: 55,
@@ -73,9 +71,6 @@ class BottomNavBarWidget extends StatelessWidget {
                               color: provider.index == 1
                                   ? buttonColor
                                   : textColor2,
-                            ),
-                            const SizedBox(
-                              height: 5,
                             ),
                             Text(
                               'Upload',
@@ -95,31 +90,33 @@ class BottomNavBarWidget extends StatelessWidget {
                     InkWell(
                       onTap: () {},
                       child: SizedBox(
-                          //  width: 55,
-                          // child: Column(
-                          //   children: [
-                          //     Icon(
-                          //       Icons.home,
-                          //       size: 25,
-                          //       color:
-                          //           provider.index == 2 ? butonColor : textColor2,
-                          //     ),
-                          //     const SizedBox(
-                          //       height: 5,
-                          //     ),
-                          //     Text(
-                          //       'Scan',
-                          //       style: TextStyle(
-                          //         fontSize: 12,
-                          //         fontWeight: FontWeight.w500,
-                          //         color: provider.index == 2
-                          //             ? butonColor
-                          //             : textColor2,
-                          //       ),
-                          //     ),
-                          //   ],
-                          // ),
-                          ),
+                        width: 55,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Icon(
+                              Icons.home,
+                              size: 25,
+                              color: provider.index == 2
+                                  ? buttonColor
+                                  : textColor2,
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'Scan',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                                color: provider.index == 2
+                                    ? buttonColor
+                                    : textColor2,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                     //..............
                     InkWell(
@@ -137,9 +134,6 @@ class BottomNavBarWidget extends StatelessWidget {
                               color: provider.index == 3
                                   ? buttonColor
                                   : textColor2,
-                            ),
-                            const SizedBox(
-                              height: 5,
                             ),
                             Text(
                               'Notification',
@@ -171,9 +165,6 @@ class BottomNavBarWidget extends StatelessWidget {
                               color: provider.index == 4
                                   ? buttonColor
                                   : textColor2,
-                            ),
-                            const SizedBox(
-                              height: 5,
                             ),
                             Text(
                               'Profile',

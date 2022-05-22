@@ -19,46 +19,46 @@ class HomeTap extends StatelessWidget {
     return Consumer<HomeProvider>(
       builder: (context, provider, child) {
         return Scaffold(
-          body: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  width: double.infinity,
-                  height: size.height / 3,
-                  color: Colors.white,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const SizedBox(
-                        height: 50,
+          body: Column(
+            children: [
+              Container(
+                width: double.infinity,
+                height: size.height / 3,
+                color: Colors.white,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(
+                      height: 50,
+                    ),
+                    CustomTextFormFild(
+                      icon: IconlyBroken.search,
+                      text: 'Search',
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Text(
+                        'Category',
+                        style: Theme.of(context).textTheme.headline1,
                       ),
-                      CustomTextFormFild(
-                        icon: IconlyBroken.search,
-                        text: 'Search',
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: Text(
-                          'Category',
-                          style: Theme.of(context).textTheme.headline1,
-                        ),
-                      ),
-                      MenuCategory(
-                        x: provider.manuCategore,
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                    ],
-                  ),
+                    ),
+                    MenuCategory(
+                      x: provider.manuCategore,
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                  ],
                 ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Container(
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Expanded(
+                child: Container(
                   color: Colors.white,
                   width: double.infinity,
-                  height: size.height - 10 - size.height / 3,
+                  // height: size.height - 10 - size.height / 3,
                   child: Column(
                     children: [
                       const SizedBox(
@@ -84,8 +84,8 @@ class HomeTap extends StatelessWidget {
                     ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         );
       },

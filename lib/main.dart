@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
                   color: textColor2)),
           primarySwatch: Colors.blue,
         ),
-        home: NotifictionTap(),
+        home: StartScreen(),
       ),
     );
   }
