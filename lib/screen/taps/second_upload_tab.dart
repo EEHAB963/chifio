@@ -15,7 +15,7 @@ class SecondUploadScreen extends StatefulWidget {
 }
 
 class _SecondUploadScreenState extends State<SecondUploadScreen> {
-  int ingrediant = 2;
+  List ingrediants = ["0", "1"];
 
   @override
   Widget build(BuildContext context) {
@@ -76,9 +76,18 @@ class _SecondUploadScreenState extends State<SecondUploadScreen> {
                       ),
                       ListView.builder(
                           shrinkWrap: true,
-                          itemCount: ingrediant,
+                          itemCount: ingrediants.length,
                           itemBuilder: (context, index) {
-                            return enterIngrediant();
+                            final ingrediant = ingrediants[index];
+                            return Dismissible(
+                              direction: DismissDirection.endToStart,
+                              onDismissed: (direction) {
+                                ingrediants.removeAt(index);
+                                print(ingrediants.length);
+                              },
+                              key: ValueKey(ingrediant),
+                              child: enterIngrediant(),
+                            );
                           }),
                       SizedBox(
                         height: 20,
@@ -213,7 +222,7 @@ class _SecondUploadScreenState extends State<SecondUploadScreen> {
       child: GestureDetector(
         onTap: () {
           setState(() {
-            ingrediant++;
+            ingrediants.add(enterIngrediant());
           });
         },
         child: Container(
