@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 import 'constans/colors.dart';
 import 'screen/start_screens/start_screen.dart';
 import 'screen/taps/notification_tap.dart';
+import 'screen/taps/second_upload_tab.dart';
 
 void main() {
   runApp(const MyApp());
@@ -57,7 +58,9 @@ class MyApp extends StatelessWidget {
                   color: textColor2)),
           primarySwatch: Colors.blue,
         ),
-        home: StartScreen(),
+
+        home: SecondUploadScreen(),
+
       ),
     );
   }
