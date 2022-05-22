@@ -58,9 +58,7 @@ class MyApp extends StatelessWidget {
                   color: textColor2)),
           primarySwatch: Colors.blue,
         ),
-
-        home: SecondUploadScreen(),
-
+        home: StartScreen(),
       ),
     );
   }
