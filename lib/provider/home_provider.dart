@@ -15,13 +15,6 @@ class HomeProvider extends ChangeNotifier {
 
   notifyListeners();
 
-  List<Widget> screens = [
-    HomeTap(),
-    UploadTap(),
-    ScanTap(),
-    NotifictionTap(),
-    ProfileTap(),
-  ];
   final items = <BottomNavigationBarItem>[
     BottomNavigationBarItem(
       label: 'k',
