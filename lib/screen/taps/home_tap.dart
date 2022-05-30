@@ -32,7 +32,11 @@ class HomeTap extends StatelessWidget {
                       height: 50,
                     ),
                     CustomTextFormFild(
-                      icon: IconlyBroken.search,
+                      ontap: (){},
+                      
+                      readOnly: true,
+                      
+                                         icon: IconlyBroken.search,
                       text: 'Search',
                     ),
                     Padding(

@@ -87,12 +87,9 @@ class StartScreen extends StatelessWidget {
                   ),
                   InkWell(
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const LoginScreen(),
-                          ),
-                        );
+                       Navigator.pushNamedAndRemoveUntil(context, "login", (route) => false);
+                      
+                    
                       },
                       child:
                           MyTextButon(color: buttonColor, text: 'Get Start')),

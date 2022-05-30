@@ -76,12 +76,7 @@ class LoginScreen extends StatelessWidget {
                 color: buttonColor,
                 text: 'Login',
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => HomeScreen(),
-                    ),
-                  );
+                  Navigator.pushNamedAndRemoveUntil(context, "homescreen", (route) => false);
                 },
               ),
               const SizedBox(
@@ -102,12 +97,8 @@ class LoginScreen extends StatelessWidget {
                   const Text('Don’t have any account?'),
                   TextButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const SingUpScreen(),
-                        ),
-                      );
+                      Navigator.pushNamed(context, "signUp");
+                    
                     },
                     child: Text(
                       'Sign Up',

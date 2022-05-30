@@ -33,7 +33,9 @@ class _SecondUploadScreenState extends State<SecondUploadScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushReplacementNamed(context, "homescreen");
+                            },
                             child: Text(
                               "Cancel",
                               style: TextStyle(
@@ -109,7 +111,9 @@ class _SecondUploadScreenState extends State<SecondUploadScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       PrimaryButton(
-                          onTap: (() {}),
+                          onTap: (() {
+                            Navigator.pushNamed(context, "upload");
+                          }),
                           colorText: headLineColor,
                           text: "Back",
                           buttonColor: Color(0xffF4F5F7)),
@@ -302,7 +306,7 @@ class _SecondUploadScreenState extends State<SecondUploadScreen> {
                       text: "Back to Home",
                       buttonColor: buttonColor,
                       onTap: () {
-                        Navigator.pop(context);
+                        Navigator.pushNamedAndRemoveUntil(context, "homescreen", (route) => false);
                       },
                       colorText: Colors.white,
                     )
