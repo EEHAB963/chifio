@@ -29,7 +29,7 @@ class _UploadTapState extends State<UploadTap> {
                     children: [
                       TextButton(
                           onPressed: () {
-                            Navigator.pop(context);
+                            Navigator.pushReplacementNamed(context, "homescreen");
                           },
                           child: Text(
                             "Cancel",

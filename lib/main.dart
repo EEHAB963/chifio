@@ -1,4 +1,8 @@
 import 'package:chefio/provider/home_provider.dart';
+import 'package:chefio/screen/basic_screen.dart/home_screen.dart';
+import 'package:chefio/screen/start_screens/login_screen.dart';
+import 'package:chefio/screen/start_screens/singUp_screen.dart';
+import 'package:chefio/screen/taps/profile_tap.dart';
 import 'package:chefio/screen/taps/upload_tap.dart';
 
 import 'package:flutter/material.dart';
@@ -25,6 +29,18 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => HomeProvider()),
       ],
       child: MaterialApp(
+        initialRoute: "start",
+        routes: {
+          "start":(context)=>StartScreen(),
+          "homescreen":(context) => HomeScreen(),
+          "signUp":(context)=>SingUpScreen(),
+          "login":(context)=>LoginScreen(),
+          "upload":(context)=>UploadTap(),
+          "secondUpload":(context)=>SecondUploadScreen(),
+          "notification":(context) => NotifictionTap(),
+          "profile":(context) => ProfileTap(),
+
+        },
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
