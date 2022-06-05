@@ -32,11 +32,9 @@ class HomeTap extends StatelessWidget {
                       height: 50,
                     ),
                     CustomTextFormFild(
-                      ontap: (){},
-                      
+                      ontap: () {},
                       readOnly: true,
-                      
-                                         icon: IconlyBroken.search,
+                      icon: IconlyBroken.search,
                       text: 'Search',
                     ),
                     Padding(
@@ -62,7 +60,6 @@ class HomeTap extends StatelessWidget {
                 child: Container(
                   color: Colors.white,
                   width: double.infinity,
-                  // height: size.height - 10 - size.height / 3,
                   child: Column(
                     children: [
                       const SizedBox(
@@ -70,18 +67,13 @@ class HomeTap extends StatelessWidget {
                       ),
                       LeftAndRight(lr: provider.leftAndRaet),
                       Expanded(
-                        child: Container(
-                          // padding: const EdgeInsets.only(left: 10, right: 10),
-                          child: GridView.count(
-                            padding: EdgeInsets.symmetric(horizontal: 23),
-                            crossAxisCount: 2,
-
-                            //mainAxisSpacing: 10,
-                            childAspectRatio: 1 / 1.6,
-                            children: List.generate(
-                              5,
-                              (index) => ProductItemWidget(),
-                            ),
+                        child: GridView.count(
+                          padding: const EdgeInsets.symmetric(horizontal: 23),
+                          crossAxisCount: 2,
+                          childAspectRatio: 1 / 1.6,
+                          children: List.generate(
+                            5,
+                            (index) => ProductItemWidget(),
                           ),
                         ),
                       ),
