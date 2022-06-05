@@ -29,7 +29,8 @@ class _UploadTapState extends State<UploadTap> {
                     children: [
                       TextButton(
                           onPressed: () {
-                            Navigator.pushReplacementNamed(context, "homescreen");
+                            Navigator.pushReplacementNamed(
+                                context, "homescreen");
                           },
                           child: Text(
                             "Cancel",
@@ -128,7 +129,7 @@ class _UploadTapState extends State<UploadTap> {
           child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
+              children: const [
                 Icon(
                   Icons.photo,
                   size: 65,

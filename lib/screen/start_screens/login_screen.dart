@@ -1,9 +1,7 @@
 import 'package:chefio/Widget/big_botton.dart';
 import 'package:chefio/Widget/text_form_fild.dart';
 import 'package:chefio/constans/colors.dart';
-import 'package:chefio/screen/basic_screen.dart/home_screen.dart';
 import 'package:chefio/screen/start_screens/password_recovery.dart';
-import 'package:chefio/screen/start_screens/singUp_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -61,7 +59,7 @@ class LoginScreen extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => PasswordRecovery(),
+                            builder: (context) => const PasswordRecovery(),
                           ),
                         );
                       },
@@ -76,7 +74,8 @@ class LoginScreen extends StatelessWidget {
                 color: buttonColor,
                 text: 'Login',
                 onTap: () {
-                  Navigator.pushNamedAndRemoveUntil(context, "homescreen", (route) => false);
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, "homescreen", (route) => false);
                 },
               ),
               const SizedBox(
@@ -98,7 +97,6 @@ class LoginScreen extends StatelessWidget {
                   TextButton(
                     onPressed: () {
                       Navigator.pushNamed(context, "signUp");
-                    
                     },
                     child: Text(
                       'Sign Up',
