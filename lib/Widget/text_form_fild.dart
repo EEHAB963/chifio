@@ -17,7 +17,7 @@ class CustomTextFormFild extends StatelessWidget {
   IconData? suffixIcon;
   bool readOnly;
   VoidCallback? ontap;
-  Function(String?)? onSaved;
+  String? Function(String?)? onSaved;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class CustomTextFormFild extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 26),
       child: TextFormField(
         onTap: ontap,
-        onSaved: onSaved,
+        validator: onSaved,
         readOnly: readOnly,
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
@@ -37,6 +37,10 @@ class CustomTextFormFild extends StatelessWidget {
             borderSide: const BorderSide(color: buttonColor),
           ),
           errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(40),
+            borderSide: const BorderSide(color: Colors.red),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(40),
             borderSide: const BorderSide(color: Colors.red),
           ),

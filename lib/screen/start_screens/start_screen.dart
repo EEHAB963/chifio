@@ -1,11 +1,27 @@
+import 'dart:math';
+
 import 'package:chefio/Widget/big_botton.dart';
 import 'package:chefio/constans/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'login_screen.dart';
 
-class StartScreen extends StatelessWidget {
-  const StartScreen({Key? key}) : super(key: key);
+class StartScreen extends StatefulWidget {
+  StartScreen({Key? key}) : super(key: key);
+
+  @override
+  State<StartScreen> createState() => _StartScreenState();
+}
+
+class _StartScreenState extends State<StartScreen> {
+  bool? open;
+
+  @override
+  void initState() {
+    gitPref();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,8 +66,16 @@ class StartScreen extends StatelessWidget {
                     ),
                     InkWell(
                         onTap: () {
-                          Navigator.pushNamedAndRemoveUntil(
-                              context, "login", (route) => false);
+                          print(open);
+                          if (open == true) {
+                            print('git pref');
+                            Navigator.pushNamedAndRemoveUntil(
+                                context, "homescreen", (route) => false);
+                          } else {
+                            print('No git pref');
+                            Navigator.pushNamedAndRemoveUntil(
+                                context, "login", (route) => false);
+                          }
                         },
                         child:
                             MyTextButon(color: buttonColor, text: 'Get Start')),
@@ -63,5 +87,11 @@ class StartScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  //  method for getting data from pref to log in
+  gitPref() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    open = pref.getBool('open');
   }
 }

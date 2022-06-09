@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../constans/colors.dart';
 import '../taps/Profile_tap.dart';
@@ -15,6 +16,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    setDataPref();
+    super.initState();
+  }
+
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -217,5 +224,12 @@ class _HomeScreenState extends State<HomeScreen> {
         color: Colors.white,
       ),
     );
+  }
+
+//Methid for setting data to pref to
+  setDataPref() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setBool("open", true);
+    print('don save data in pref');
   }
 }
