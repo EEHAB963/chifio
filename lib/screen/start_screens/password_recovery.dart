@@ -1,7 +1,6 @@
 import 'package:chefio/Widget/big_botton.dart';
 import 'package:chefio/Widget/text_form_fild.dart';
 import 'package:chefio/constans/colors.dart';
-import 'package:chefio/screen/start_screens/verification_code.dart';
 import 'package:flutter/material.dart';
 
 class PasswordRecovery extends StatelessWidget {
